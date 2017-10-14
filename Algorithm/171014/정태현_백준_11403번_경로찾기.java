@@ -4,15 +4,47 @@ public class Backjoon_14726 {
 
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        int c = Integer.parseInt(sc.nextLine());
-        for (int i = 0; i < c; i++) {
-            int sum = 0;
-            char[] cs = sc.nextLine().toCharArray();    // 16개의 숫자를 char 배열로 변환 합니다
-            for (int j = cs.length-1; j > 0; j -= 2) {  // 우측 부터 계산 하므로 cs.length 로 시작해서 0 보다 작을 때까지 감소 시키면서 계쏙 반복합니다
-                int tmp = Integer.parseInt(cs[j - 1] + "") * 2; // 짝수 번째 숫자에 * 2 를 합니다
-                sum += Integer.parseInt(cs[j] + "") + tmp / 10 + tmp % 10;  // sum 에 홀수 번째 수와 짝수 번째 10의자리, 1의 자리를 더합니다 (10의 자리가 있거나 없어도 됩니다)
-            }
-            System.out.println(sum % 10 == 0 ? "T" : "F");  // sum 이 10으로 나뉘어지면 T, 아니면 F 를 출력합니다
+        int n = sc.nextInt();
+        int[][] arr = new int[n][n];
+        /*
+         2중 배열을 담기 위한 arr
+         0 1 0
+         0 0 1
+         1 0 0
+        */
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                arr[i][j] = sc.nextInt();
+        // arr 배열 세팅
+
+        for (int i = 0; i < n; i++)
+            // (x, y) 에서 x 를 의미하는 i 번째 정점
+            for (int j = 0; j < n; j++)
+                // (x, y) 에서 y 를 의미하는 j 번째 정점
+                for (int k = 0; k < n; k++)
+                    // arr[j][i] : j 번째 정점에서 i 로 갈 수 있는지 판별 하기 위함
+                    // arr[i][k] : 비교 대상인 i 번째 정점이 갈 수 있는 정점
+                    if ((arr[j][i] & arr[i][k]) == 1)
+                        arr[j][k] = 1;
+                        /*
+                        0 1 0
+                        0 0 1
+                        1 0 0
+
+                        ex) i = 0, j =2, k=1
+                        0 (i,k) 0
+                        0 0 1
+                        (j,i) 0 0
+
+                        (j,i) 가 1번째 라인 ( 1 0 0) 을 갈 수 있을 때, 1번째 라인이 1번째 라인을 갈 수 있으니 ( 0 1 0 )
+                        (j,i) 도 2번째 라인을 갈 수 있다 ( 1, 1, 0)
+                     */
+
+        // 결과 출력
+        for (int[] i : arr) {
+            for (int j : i)
+                System.out.print(j + " ");
+            System.out.println();
         }
     }
 }
