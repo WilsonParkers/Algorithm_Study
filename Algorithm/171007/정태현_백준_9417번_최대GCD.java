@@ -1,44 +1,6 @@
-package algorithm.Backjoon;
-
-
-/*
- *
- * @url : https://www.acmicpc.net/problem/9417
- *
- * 최대 GCD
- *
- * 정수 M개가 주어졌을 때, 모든 두 수의 쌍 중에서 가장 큰 최대공약수 찾는 프로그램을 작성하시오.
- *
- * 입력
- * 첫째 줄에 테스트 케이스의 개수 N (1 < N < 100)이 주어진다. 각 테스트 케이스는 한 줄로 이루어져 있으며, 양의 정수 M (1 < M < 100)개가 주어진다. 모든 숫자는 int 범위이다.
- *
- * 출력
- * 각 테스트 케이스 마다, 입력으로 주어진 수의 모든 두 수의 쌍의 최대공약수 중 가장 큰 값을 출력한다.
- *
- * 예제 입력
- * 3
- * 10 20 30 40
- * 7 5 12
- * 125 15 25
- *
- * 예제 출력
- * 20
- * 1
- * 25
- *
- */
-
-import java.util.Arrays;
 import java.util.Scanner;
-import java.util.function.Function;
-import java.util.stream.IntStream;
 
 public class Backjoon_9417 {
-
-            3
-            10 20 30 40
-            7 5 12
-            125 15 25
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
