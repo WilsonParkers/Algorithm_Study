@@ -1,0 +1,13 @@
+package samsung_Level1;
+
+import java.util.Scanner;
+
+public class Samsung_Level1_reverse {
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		while(num>=0){
+			System.out.print(num-- + " ");		// 0까지 출력
+		}
+	}
+}
