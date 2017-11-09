@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SWExpert_1859 {
+public class SWExpert_1859 { 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         for (int i = 1, t = sc.nextInt(); i <= t; i++) {    // t 는 테스트 케이스 수
