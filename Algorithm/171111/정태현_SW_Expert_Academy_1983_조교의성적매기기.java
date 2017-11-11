@@ -31,4 +31,7 @@ public class SWExpert_1983 {
             }
         }
     }
+    static int nt() {
+        return sc.nextInt();
+    }
 }
